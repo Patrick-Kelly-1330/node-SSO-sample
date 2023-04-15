@@ -78,4 +78,18 @@ router.get('/logout', async (req, res) => {
     }
 })
 
+
+router.get('/users', async (req, res) => {
+    try {
+        const usersByGroup = await workos.directorySync.listUsers({
+            group: 'directory_group_01GY1N3B9RDY35SJ3X0DRMAHV5',
+          });
+        console.log('groupInfo ', usersByGroup);
+        res.redirect('/')
+    } catch (error) {
+        console.log('groupInfo ');
+        res.render('error.ejs', { error: error })
+    }
+})
+
 export default router
