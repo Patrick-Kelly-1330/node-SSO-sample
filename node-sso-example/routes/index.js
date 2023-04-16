@@ -25,7 +25,7 @@ router.get('/', function (req, res) {
         res.render('login_successful.ejs', {
             profile: session.profile,
             first_name: session.first_name,
-            last_name: session.last_name
+            last_name: session.last_name,
         })
     } else {
         res.render('index.ejs', { title: 'Home' })
@@ -55,11 +55,18 @@ router.get('/callback', async (req, res) => {
             code,
             clientID,
         })
+
+        const groupInfo = await workos.directorySync.listUsers({
+            group: 'directory_group_01GY1N3B9RDY35SJ3X0DRMAHV5',
+        })
+
         const json_profile = JSON.stringify(profile, null, 4)
 
         session.first_name = profile.profile.first_name
+        session.last_name = profile.profile.last_name
         session.profile = json_profile
         session.isloggedin = true
+        session.firstPerson = groupInfo.data[0].first_name
         res.redirect('/')
     } catch (error) {
         res.render('error.ejs', { error: error })
@@ -81,15 +88,12 @@ router.get('/logout', async (req, res) => {
 
 router.get('/users', async (req, res) => {
     try {
-        workos.directorySync.listUsers({
-            group: 'directory_group_01GY1N3B9RDY35SJ3X0DRMAHV5',
-          });
-        res.render('usersList.ejs', {
-            profile: session.profile,
-            first_name: session.first_name,
-        })
+    //    session.name = 'ok';
+    //    console.log('GR ', groupInfo);
+      res.render('usersList.ejs', {
+        firstPerson : session.firstPerson,
+      });
     } catch (error) {
-        console.log('groupInfo ');
         res.render('error.ejs', { error: error })
     }
 })
