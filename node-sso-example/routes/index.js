@@ -25,6 +25,7 @@ router.get('/', function (req, res) {
         res.render('login_successful.ejs', {
             profile: session.profile,
             first_name: session.first_name,
+            last_name: session.last_name
         })
     } else {
         res.render('index.ejs', { title: 'Home' })
@@ -59,7 +60,6 @@ router.get('/callback', async (req, res) => {
         session.first_name = profile.profile.first_name
         session.profile = json_profile
         session.isloggedin = true
-
         res.redirect('/')
     } catch (error) {
         res.render('error.ejs', { error: error })
@@ -81,11 +81,13 @@ router.get('/logout', async (req, res) => {
 
 router.get('/users', async (req, res) => {
     try {
-        const usersByGroup = await workos.directorySync.listUsers({
+        workos.directorySync.listUsers({
             group: 'directory_group_01GY1N3B9RDY35SJ3X0DRMAHV5',
           });
-        console.log('groupInfo ', usersByGroup);
-        res.redirect('/')
+        res.render('usersList.ejs', {
+            profile: session.profile,
+            first_name: session.first_name,
+        })
     } catch (error) {
         console.log('groupInfo ');
         res.render('error.ejs', { error: error })
