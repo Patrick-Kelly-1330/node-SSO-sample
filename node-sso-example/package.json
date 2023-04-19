@@ -6,19 +6,24 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon ./index.js"
+    "start": "nodemon ./index.js",
+    "client-dev": "webpack --watch",
+    "build": "webpack"
   },
   "author": "WorkOS",
   "dependencies": {
     "@workos-inc/node": "^2.16.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "ejs-webpack-loader": "^2.2.2",
     "express": "^4.18.1",
     "express-session": "^1.17.2",
-    "cookie-parser": "^1.4.6",
-    "ejs": "^3.1.8",
-    "dotenv": "^16.0.1",
     "morgan": "^1.10.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.19"
+    "nodemon": "^2.0.19",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   }
 }
