@@ -21,11 +21,44 @@
         </div>
         <div class='flex'>
             <div class="logged_in_div_left">
-                <div class="title-text">
-                    <h1>Your Team Members</h1>
-                    <p><%=firstPerson%></p>
-                    <a href="/logout"><button class="button button-outline">Log Out</button></a>
-                    <a href="/"><button class="button button-outline">Back to Home</button></a>
+                <h1>Your Team Members</h1>
+                <div class="groupContainer">
+                      <table>
+                        <tr class="memberHeader">
+                            <th class="firstHeader">First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                        </tr>
+                          <tr class="member">
+                            <td><%=firstPersonFirst%></td>
+                            <td><%=firstPersonLast%></td>
+                            <td><%=firstPersonEmail%></td>
+                          </tr>
+                          <tr class="member">
+                            <td><%=secondPersonFirst%></td>
+                            <td><%=secondPersonLast%></td>
+                            <td><%=secondPersonEmail%></td>
+                          </tr>
+                          <tr class="member">
+                            <td><%=thirdPersonFirst%></td>
+                            <td><%=thirdPersonLast%></td>
+                            <td><%=thirdPersonEmail%></td>
+                          </tr>
+                          <tr class="member">
+                            <td><%=fourthPersonFirst%></td>
+                            <td><%=fourthPersonLast%></td>
+                            <td><%=fourthPersonEmail%></td>
+                          </tr>
+                          <tr class="member">
+                            <td><%=fifthPersonFirst%></td>
+                            <td><%=fifthPersonLast%></td>
+                            <td><%=fifthPersonEmail%></td>
+                          </tr>
+                      </table>
+                </div>
+                <div class="buttonContainer">
+                  <a href="/"><button class="button button-outline">Back to Home</button></a>
+                  <a href="/logout"><button class="button button-outline">Log Out</button></a>
                 </div>
             </div>
         </div>

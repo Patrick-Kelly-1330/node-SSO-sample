@@ -61,12 +61,25 @@ router.get('/callback', async (req, res) => {
         })
 
         const json_profile = JSON.stringify(profile, null, 4)
-
         session.first_name = profile.profile.first_name
         session.last_name = profile.profile.last_name
         session.profile = json_profile
         session.isloggedin = true
-        session.firstPerson = groupInfo.data[0].first_name
+        session.firstPersonFirst = groupInfo.data[0].first_name
+        session.firstPersonLast = groupInfo.data[0].last_name
+        session.firstPersonEmail = groupInfo.data[0].username
+        session.secondPersonFirst = groupInfo.data[1].first_name
+        session.secondPersonLast = groupInfo.data[1].last_name
+        session.secondPersonEmail = groupInfo.data[1].username
+        session.thirdPersonFirst = groupInfo.data[2].first_name
+        session.thirdPersonLast = groupInfo.data[2].last_name
+        session.thirdPersonEmail = groupInfo.data[2].username
+        session.fourthPersonFirst = groupInfo.data[3].first_name
+        session.fourthPersonLast = groupInfo.data[3].last_name
+        session.fourthPersonEmail = groupInfo.data[3].username
+        session.fifthPersonFirst = groupInfo.data[4].first_name
+        session.fifthPersonLast = groupInfo.data[4].last_name
+        session.fifthPersonEmail = groupInfo.data[4].username
         res.redirect('/')
     } catch (error) {
         res.render('error.ejs', { error: error })
@@ -88,10 +101,22 @@ router.get('/logout', async (req, res) => {
 
 router.get('/users', async (req, res) => {
     try {
-    //    session.name = 'ok';
-    //    console.log('GR ', groupInfo);
       res.render('usersList.ejs', {
-        firstPerson : session.firstPerson,
+        firstPersonFirst : session.firstPersonFirst,
+        firstPersonLast : session.firstPersonLast,
+        firstPersonEmail : session.firstPersonEmail,
+        secondPersonFirst : session.secondPersonFirst,
+        secondPersonLast : session.secondPersonLast,
+        secondPersonEmail : session.secondPersonEmail,
+        thirdPersonFirst : session.thirdPersonFirst,
+        thirdPersonLast : session.thirdPersonLast,
+        thirdPersonEmail : session.thirdPersonEmail,
+        fourthPersonFirst : session.fourthPersonFirst,
+        fourthPersonLast : session.fourthPersonLast,
+        fourthPersonEmail : session.fourthPersonEmail,
+        fifthPersonFirst : session.fifthPersonFirst,
+        fifthPersonLast : session.fifthPersonLast,
+        fifthPersonEmail : session.fifthPersonEmail,
       });
     } catch (error) {
         res.render('error.ejs', { error: error })
