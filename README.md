@@ -51,6 +51,13 @@ npm start
 ```
 **Local Demo Instructions**
 
+Initial step: create an .env file in the main directory to store your API Key and Client ID. 
+
+```
+WORKOS_API_KEY = your_api_key_here
+WORKOS_CLIENT_ID = your_client_id_here
+```
+
 1. Visit https://localhost:8000
 2. Select _Log In_
 3. Enter the email of the test user listed above 
