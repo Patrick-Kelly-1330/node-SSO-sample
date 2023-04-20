@@ -24,8 +24,24 @@ password: workosPassword1
 # Application Demo 
 ![sampleSSOworkOS](https://user-images.githubusercontent.com/51098314/233148001-1c97e102-c421-443f-ae75-50791d4cfcbe.gif)
 
-# Node Example Applications powered by WorkOS
+# Node Project Setup
 
+**Preqequisite**: Node.js version 10+
+
+1. Clone the main repo
+
+```
+git clone https://github.com/Patrick-Kelly-1330/node-SSO-sample.git
+```
+2. Navigate into the node-sso-example directory 
+```
+cd node-example-applications/node-sso-example
+```
+
+3. Install the dependencies
+```
+npm install
+```
 ## For more information, please see the following guides:
 
 - [Single Sign-On](https://workos.com/docs/sso/guide)
