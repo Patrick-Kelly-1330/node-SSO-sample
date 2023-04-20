@@ -28,6 +28,8 @@ password: workosPassword1
 
 **Preqequisite**: Node.js version 10+
 
+**Local Install Instructions**
+
 1. Clone the main repo
 
 ```
@@ -47,8 +49,13 @@ npm install
 ```
 npm start
 ```
+**Local Demo Instructions**
 
-5. To demo the app, follow the steps above in section _Application Demo and Login Flow_
+1. Visit https://localhost:8000
+2. Select _Log In_
+3. Enter the email of the test user listed above 
+4. Via Okta, enter the emmail and password of the test user listed above
+5. Select _View Team Members_ to view list of group members from Okta directory
 
 ## For more information, please see the following guides:
 
