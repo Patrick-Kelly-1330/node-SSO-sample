@@ -1,4 +1,4 @@
-# Node Example Applications powered by WorkOS
+# Node Example Application powered by WorkOS
 
 Sample application that demonstrates how to use the [WorkOS Node SDK](https://github.com/workos-inc/workos-node) for SSO and Directory Sync
 
