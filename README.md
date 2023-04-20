@@ -22,7 +22,7 @@ username: michaelanderson@arandomwinner.com
 password: workosPassword1
 
 # Application Demo 
-![sampleSSOworkOS](https://user-images.githubusercontent.com/51098314/233148001-1c97e102-c421-443f-ae75-50791d4cfcbe.gif)
+![deployedSSOsampleworkOS](https://user-images.githubusercontent.com/51098314/233248709-aba596b0-8fff-4ded-b549-c67ad1a17a2e.gif)
 
 # Local Setup and Application Demo
 
