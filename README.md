@@ -16,7 +16,8 @@ To test this application's flow:
 5. Select _View Team Members_ to view list of group members from Okta directory _
 
 **Test User Credentials**
-username: michaelanderson@arandomwinner.com \n
+username: michaelanderson@arandomwinner.com
+
 password: workosPassword1
 
 # Application Demo 
