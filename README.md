@@ -37,7 +37,7 @@ git clone https://github.com/Patrick-Kelly-1330/node-SSO-sample.git
 ```
 2. Navigate into the node-sso-example directory 
 ```
-cd node-example-applications/node-sso-example
+cd node-sso-sample/node-sso-example
 ```
 
 3. Install the dependencies
