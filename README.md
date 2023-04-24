@@ -11,9 +11,8 @@ Deployed app:  https://samplessoworkos.onrender.com
 # Application Demo and Login Flow 
 1. Visit https://samplessoworkos.onrender.com
 2. Select _Log In_
-3. Enter the email of the test user listed below 
-4. Via Okta, enter the email and password of the test user listed below
-5. Select _View Team Members_ to view list of group members from the Okta directory
+3. Via Okta, enter the email and password of the test user listed below
+4. Select _View Team Members_ to view list of group members from the Okta directory
 
 **Test User Credentials**
 
@@ -58,9 +57,8 @@ WORKOS_CLIENT_ID = your_client_id_here
 
 1. Visit https://localhost:8000
 2. Select _Log In_
-3. Enter the email of the test user listed above 
-4. Via Okta, enter the email and password of the test user listed above
-5. Select _View Team Members_ to view list of group members from Okta directory
+3. Via Okta, enter the email and password of the test user listed above
+4. Select _View Team Members_ to view list of group members from Okta directory
 
 ## For more information, please see the following guides:
 
