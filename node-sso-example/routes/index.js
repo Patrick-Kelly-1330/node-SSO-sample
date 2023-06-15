@@ -16,10 +16,8 @@ app.use(
 
 const workos = new WorkOS(process.env.WORKOS_API_KEY)
 const clientID = process.env.WORKOS_CLIENT_ID
-console.log('API ', process.env.WORKOS_API_KEY)
-console.log('client ', process.env.WORKOS_CLIENT_ID)
-const organizationID = 'org_01GX934MDJRFK45VJFKV9AWXRZ'
-const redirectURI = 'https://samplessoworkos.onrender.com/callback'
+const organizationID = 'org_01H2M21QBQPDG1KNCD3FGE7W2W' 
+const redirectURI = 'http://localhost:8000/callback'
 const state = ''
 
 router.get('/', function (req, res) {
@@ -45,6 +43,7 @@ router.get('/login', (req, res) => {
 
         res.redirect(url)
     } catch (error) {
+        console.log('HIT')
         res.render('error.ejs', { error: error })
     }
 })
