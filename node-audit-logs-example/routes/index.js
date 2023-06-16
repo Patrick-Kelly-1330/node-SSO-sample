@@ -42,8 +42,8 @@ router.get('/set_org', async (req, res) => {
     const org = await workos.organizations.getOrganization(
         req.query.id
     )
-
-    session.orgId = org.id
+    
+    session.orgId = org.id.toString();
     session.orgName = org.name
 
     const now = new Date()
