@@ -16,6 +16,20 @@ export default {
     filename: "bundle.js",
     path: DIST_DIR
   },
+  resolve: {
+    fallback: {
+      crypto: false,
+      url: false,
+      path: false,
+      util: false,
+      stream: false,
+      buffer: false,
+      string_decoder: false,
+      querystring: false,
+      http: false,
+      zlib: false,
+    }
+  },
   module: {
     rules: [
       {
@@ -54,3 +68,6 @@ export default {
     ]
   }
 };
+
+
+// add a fallback 'resolve.fallback: { "crypto": require.resolve("crypto-browserify") }'

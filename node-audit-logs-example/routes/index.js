@@ -38,7 +38,7 @@ router.get('/', async (req, res) => {
     })
 })
 
-router.get('/set_org', async (req, res) => {
+router.get('/set_org', async (req, res) =>
     const org = await workos.organizations.getOrganization(
         req.query.id
     )
