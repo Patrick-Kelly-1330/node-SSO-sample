@@ -16,10 +16,10 @@ app.use(
 
 const workos = new WorkOS(process.env.WORKOS_API_KEY)
 const clientID = process.env.WORKOS_CLIENT_ID
+// organization Name azureADSSO
 const organizationID = 'org_01H37HZA9RZZAAXZGTS07GGJK0' 
 const redirectURI = 'http://localhost:8000/callback'
 const state = ''
-const directoryGroup = 'directory_group_01H30BCQG77NACW58VPVKYX2TV'
 
 router.get('/', function (req, res) {
     if (session.isloggedin) {
@@ -58,18 +58,12 @@ router.get('/callback', async (req, res) => {
             clientID,
         })
 
-        const groupInfo = await workos.directorySync.listUsers({
-            group: directoryGroup, 
-        })
-
         const json_profile = JSON.stringify(profile, null, 4)
         session.first_name = profile.profile.first_name
         session.last_name = profile.profile.last_name
         session.profile = json_profile
         session.isloggedin = true
-        session.firstPersonFirst = groupInfo.data[0].first_name
-        session.firstPersonLast = groupInfo.data[0].last_name
-        session.firstPersonEmail = groupInfo.data[0].username
+        
         res.redirect('/')
     } catch (error) {
         res.render('error.ejs', { error: error })
