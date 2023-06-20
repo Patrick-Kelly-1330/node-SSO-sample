@@ -16,7 +16,8 @@ app.use(
 
 const workos = new WorkOS(process.env.WORKOS_API_KEY)
 const clientID = process.env.WORKOS_CLIENT_ID
-const organizationID = 'org_01H37HZA9RZZAAXZGTS07GGJK0' 
+// organization Name in dashboard: ssoSample062023
+const organizationID = 'org_01H2M21QBQPDG1KNCD3FGE7W2W' 
 const redirectURI = 'http://localhost:8000/callback'
 const state = ''
 const directoryGroup = 'directory_group_01H30BCQG77NACW58VPVKYX2TV'
@@ -57,11 +58,10 @@ router.get('/callback', async (req, res) => {
             code,
             clientID,
         })
-
         const groupInfo = await workos.directorySync.listUsers({
             group: directoryGroup, 
         })
-
+        console.log('GROUP INFO ', groupInfo);
         const json_profile = JSON.stringify(profile, null, 4)
         session.first_name = profile.profile.first_name
         session.last_name = profile.profile.last_name
