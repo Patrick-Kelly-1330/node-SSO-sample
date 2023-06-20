@@ -20,6 +20,7 @@ const clientID = process.env.WORKOS_CLIENT_ID
 const organizationID = 'org_01H2M21QBQPDG1KNCD3FGE7W2W' 
 const redirectURI = 'http://localhost:8000/callback'
 const state = ''
+// group 
 const directoryGroup = 'directory_group_01H30BCQG77NACW58VPVKYX2TV'
 
 router.get('/', function (req, res) {
