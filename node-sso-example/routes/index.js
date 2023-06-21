@@ -16,8 +16,8 @@ app.use(
 
 const workos = new WorkOS(process.env.WORKOS_API_KEY)
 const clientID = process.env.WORKOS_CLIENT_ID
-// organization Name azureADSSO
-const organizationID = 'org_01H37HZA9RZZAAXZGTS07GGJK0' 
+// organization Name Google WorkSpace
+const organizationID = 'org_01H3FH69VVXYZ5GCXF7AZD3DX1' 
 const redirectURI = 'http://localhost:8000/callback'
 const state = ''
 
@@ -44,7 +44,6 @@ router.get('/login', (req, res) => {
 
         res.redirect(url)
     } catch (error) {
-        console.log('HIT')
         res.render('error.ejs', { error: error })
     }
 })
